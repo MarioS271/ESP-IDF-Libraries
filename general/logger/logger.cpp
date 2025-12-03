@@ -3,7 +3,7 @@
  * @authors MarioS271
  */
 
-#include "logger.h"
+#include "logger.hpp"
 
 #include <cstdio>
 #include <cstring>
@@ -41,4 +41,4 @@ void custom_log(esp_log_level_t level,
 
     va_end(args1);
     va_end(args2);
-}   
+}
