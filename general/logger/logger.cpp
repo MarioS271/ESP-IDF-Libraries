@@ -14,14 +14,15 @@ void custom_log(esp_log_level_t level,
                 const char* format,
                 ...)
 {
-    if (level > esp_log_level_get(tag)) { return; }
+    if (level > esp_log_level_get(tag)) return;
 
     va_list args1, args2;
     va_start(args1, format);
     va_copy(args2, args1);
 
     char log_level_char;
-    switch (level) {
+    switch (level)
+    {
         case ESP_LOG_ERROR: log_level_char = 'E'; break;
         case ESP_LOG_WARN:  log_level_char = 'W'; break;
         case ESP_LOG_INFO:  log_level_char = 'I'; break;
@@ -32,9 +33,10 @@ void custom_log(esp_log_level_t level,
 
     char* buffer = nullptr;
     int len = asprintf(&buffer, "%c [%s]: %s\n",
-                                log_level_char, tag, format);
+                        log_level_char, tag, format);
 
-    if (len >= 0 && buffer != nullptr) {
+    if (len >= 0 && buffer != nullptr)
+    {
         esp_log_writev(level, tag, buffer, args1);
         free(buffer);
     }
