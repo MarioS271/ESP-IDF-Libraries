@@ -1,6 +1,4 @@
 # Libraries
 
 This folder contains full libraries useful for many projects.
-
-<br><hr>
-Licensed under the [MarioS271 Open License](https://license.marios271.net/open)
+Full Libraries include things like classes to use for adressing sensors, custom implementations of error checking, ...
